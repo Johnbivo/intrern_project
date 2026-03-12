@@ -1,0 +1,11 @@
+.readonly-input {
+	background-color: #f1f5f9;
+	color: #64748b;
+	cursor: not-allowed;
+}
+
+:host ::ng-deep .readonly-field .mdc-notched-outline__leading,
+:host ::ng-deep .readonly-field .mdc-notched-outline__notch,
+:host ::ng-deep .readonly-field .mdc-notched-outline__trailing {
+	border-color: #cbd5e1 !important;
+}

@@ -1,0 +1,24 @@
+
+<h2 mat-dialog-title class="dialog-title">Add Employee</h2>
+
+<mat-dialog-content>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="formData.name" name="name" required />
+  </mat-form-field>
+
+
+<mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="formData.email" name="email" required />
+  </mat-form-field>
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="submit()">Create</button>
+</mat-dialog-actions>
+
+

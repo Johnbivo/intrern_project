@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+table {
+  width: 100%;
+}
+
+button[mat-icon-button] mat-icon {
+  color: rgb(124, 102, 61);
+}
+
+button[mat-icon-button][color="warn"] mat-icon {
+  color: red;
+}
+
+tr.mat-row.mat-no-data-row {
+  height: 100px;
+}
+
+tr.mat-row.mat-no-data-row td {
+  text-align: center;
+  font-style: italic;
+  color: #64748b;
+}
+
+.actions-cell {
+  white-space: nowrap;
+  min-width: 320px;
+}
+
+.actions-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.actions-cell button[mat-icon-button] {
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+}
+
+.actions-cell button[mat-icon-button] mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+}
+
+.assignButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.assign-btn {
+  min-width: 86px;
+  height: 30px;
+  line-height: 28px;
+  padding: 0 10px;
+}

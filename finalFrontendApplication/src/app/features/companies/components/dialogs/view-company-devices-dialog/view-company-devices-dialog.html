@@ -1,0 +1,43 @@
+<h2 mat-dialog-title class="dialog-title">Devices of {{ data.name }}</h2>
+
+
+
+<mat-dialog-content class="dialog-content">
+  @if (loading()) {
+    <mat-spinner diameter="40"></mat-spinner>
+
+  } @else if (error()) {
+
+    <p class="error-text">{{ error() }}</p>
+
+  } @else if (devices().length === 0) {
+
+    <p class="empty-text">No devices found for this company.</p>
+  } @else {
+
+    <table mat-table [dataSource]="devices()" class="devices-table mat-elevation-z2">
+      <ng-container matColumnDef="serialNumber">
+        <th mat-header-cell *matHeaderCellDef>Serial Number</th>
+        <td mat-cell *matCellDef="let cell">{{ cell.serialNumber }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let cell">{{ cell.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let cell">{{ cell.type }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button (click)="close()">Close</button>
+</mat-dialog-actions>
+

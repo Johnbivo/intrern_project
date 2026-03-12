@@ -1,0 +1,39 @@
+
+
+:host {
+  display: block;
+  padding: 24px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #1a1a2e;
+  margin: 0 0 20px 0;
+  border-left: 4px solid #6200ea;
+  padding-left: 12px;
+}
+
+table {
+  width: 100%;
+}
+
+
+.createButton {
+  margin-bottom: 16px;
+}
+
+button[mat-icon-button] mat-icon {
+  color: rgb(124, 102, 61);
+}
+
+button[mat-icon-button][color="warn"] mat-icon {
+  color: red;
+}
+
+.navButtons{
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

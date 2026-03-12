@@ -1,0 +1,27 @@
+
+<h2 mat-dialog-title class="dialog-title">Update Device</h2>
+
+<mat-dialog-content>
+  <mat-form-field appearance="outline" class="full-width readonly-field">
+    <mat-label>Serial Number</mat-label>
+    <input matInput [(ngModel)]="formData.serialNumber" name="serialNumber" readonly class="readonly-input" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="formData.name" name="name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Type</mat-label>
+    <input matInput [(ngModel)]="formData.type" name="type" />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="submit()">Update</button>
+</mat-dialog-actions>
+
+
+

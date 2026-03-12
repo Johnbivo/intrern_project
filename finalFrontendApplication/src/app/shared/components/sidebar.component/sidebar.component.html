@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #sidenav mode="side" [opened]="isOpen()" class="sidenav">
+    <mat-nav-list>
+      <div class="sidebar-brand">
+        <img src="images/logo.png" alt="ConnectSphere logo" class="logo">
+      </div>
+      <!--
+      <a mat-list-item routerLink="/" routerLinkActive="active">
+        <mat-icon matListItemIcon>home</mat-icon>
+        <span>Home</span>
+      </a>
+    -->
+
+      <a mat-list-item (click)="selectMenuItem('employees')" routerLink="/employees" routerLinkActive="active">
+        <mat-icon matListItemIcon>people</mat-icon>
+        <span>Employees</span>
+      </a>
+
+      <a mat-list-item (click)="selectMenuItem('devices')" routerLink="/devices" routerLinkActive="active">
+        <mat-icon matListItemIcon>devices</mat-icon>
+        <span>Devices</span>
+      </a>
+      <a mat-list-item (click)="selectMenuItem('companies')" routerLink="/companies" routerLinkActive="active">
+        <mat-icon matListItemIcon>business</mat-icon>
+        <span>Companies</span>
+      </a>
+      <!--
+      <a mat-list-item routerLink="/exit" routerLinkActive="active">
+        <mat-icon matListItemIcon>exit_to_app</mat-icon>
+        <span>Exit</span>
+      </a>-->
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button mat-icon-button (click)="toggleSideBar()" class="toggle-btn">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <router-outlet />
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,60 @@
+
+@if(loading()) {
+  <mat-spinner diameter="50"></mat-spinner>
+} @else if(error()) {
+  <p>Error loading employees: {{ error() }}</p>
+} @else {
+  <table mat-table [dataSource]="data()" class="mat-elevation-z8">
+    
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+ 
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let employee" class="actions-cell">
+        <div class="actions-content">
+          <button mat-icon-button color="primary" (click)="updateEmployee(employee)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteEmployee(employee)">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+          <div class="assignButtons">
+            @if (companyId() === 'unemployed') {
+              <button mat-stroked-button color="primary" class="assign-btn" (click)="assignEmployee(employee)">
+                Assign
+              </button>
+            } @else {
+              <button mat-stroked-button color="accent" class="assign-btn" (click)="unassignEmployee(employee)" [disabled]="!employee.companyId">
+                Unassign
+              </button>
+            }
+          </div>
+        </div>
+      </td>
+    </ng-container>
+         
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" [colSpan]="columns.length">This company does not have any employees</td>
+    </tr>
+  </table>
+}

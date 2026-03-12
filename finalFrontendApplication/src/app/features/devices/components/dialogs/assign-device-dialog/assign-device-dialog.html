@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Assign Device to Employee</h2>
+
+<mat-dialog-content>
+  <p class="subtitle">Device: {{ data.deviceName }} ({{ data.deviceSerialNumber }})</p>
+
+  @if (loading()) {
+    <mat-spinner diameter="36"></mat-spinner>
+  } @else if (error()) {
+    <p class="error-text">{{ error() }}</p>
+  } @else if (employees().length === 0) {
+    <p class="empty-text">No employees found for this company.</p>
+  } @else {
+  
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Select employee</mat-label>
+      <mat-select [(ngModel)]="selectedEmployeeId">
+        @for (employee of employees(); track employee.id) {
+          <mat-option [value]="employee.id">
+            {{ employee.name }} ({{ employee.email }})
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="confirm()" [disabled]="!selectedEmployeeId || loading() || !!error()">
+    Assign
+  </button>
+</mat-dialog-actions>

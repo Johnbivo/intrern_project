@@ -1,0 +1,56 @@
+
+@if(loading()) {
+  <mat-spinner diameter="50"></mat-spinner>
+} @else if(error()) {
+  <p>Error loading devices: {{ error() }}</p>
+} @else {
+  <table mat-table [dataSource]="data()" class="mat-elevation-z8">
+
+    
+    <ng-container matColumnDef="serialNumber">
+      <th mat-header-cell *matHeaderCellDef>Serial Number</th>
+      <td mat-cell *matCellDef="let element">{{ element.serialNumber }}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+
+
+     <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let device" class="actions-cell">
+              <div class="actions-content">
+                <button mat-icon-button color="primary" (click)="updateDevice(device)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteDevice(device)">
+                     <mat-icon>delete</mat-icon>
+                </button>
+
+                <div class="assignButtons">
+                  <button mat-stroked-button color="accent" class="assign-btn" (click)="assignDevice(device)" [disabled]="device.employeeId">
+                    Assign
+                  </button>
+                  <button mat-stroked-button color="accent" class="assign-btn" (click)="unassignDevice(device)" [disabled]="!device.employeeId">
+                    Unassign
+                  </button>
+                </div>
+              </div>
+            </td>
+        </ng-container>
+         
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" [colSpan]="columns.length">This company does not have any devices</td>
+    </tr>
+  </table>
+}

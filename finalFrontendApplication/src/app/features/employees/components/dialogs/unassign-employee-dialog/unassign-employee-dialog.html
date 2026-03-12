@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Unassign Employee</h2>
+
+<mat-dialog-content>
+	<p>
+		Unassign <strong>{{ data.employeeName }}</strong> from
+		<strong>{{ data.companyName }}</strong>?
+	</p>
+	<p class="subtitle">The employee will be moved to unemployed.</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+	<button mat-button (click)="cancel()">Cancel</button>
+	<button mat-flat-button color="warn" (click)="confirm()">Assign to Unemployed</button>
+</mat-dialog-actions>

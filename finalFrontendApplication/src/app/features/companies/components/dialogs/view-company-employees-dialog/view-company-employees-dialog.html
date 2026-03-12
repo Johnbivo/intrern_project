@@ -1,0 +1,29 @@
+<h2 mat-dialog-title class="dialog-title">Employees of {{ data.name }}</h2>
+
+<mat-dialog-content class="dialog-content">
+  @if (loading()) {
+    <mat-spinner diameter="40"></mat-spinner>
+  } @else if (error()) {
+    <p class="error-text">{{ error() }}</p>
+  } @else if (employees().length === 0) {
+    <p class="empty-text">No employees found for this company.</p>
+  } @else {
+    <table mat-table [dataSource]="employees()" class="employees-table mat-elevation-z2">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let cell">{{ cell.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let cell">{{ cell.email }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button (click)="close()">Close</button>
+</mat-dialog-actions>
+

@@ -1,0 +1,17 @@
+.subtitle {
+  margin: 0 0 16px;
+  color: #475569;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error-text {
+  color: #b91c1c;
+}
+
+.empty-text {
+  color: #64748b;
+  font-style: italic;
+}

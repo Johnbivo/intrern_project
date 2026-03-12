@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Unassign Device from Employee</h2>
+
+
+
+<mat-dialog-content>
+  <p class="subtitle">Device: {{ data.deviceName }} ({{ data.deviceSerialNumber }})</p>
+
+
+
+  @if (error()) {
+    <p class="error-text">{{ error() }}</p>
+  } @else if (loading()) {
+    <p class="subtitle">Loading assigned employee...</p>
+  } @else {
+    <p class="subtitle">Assigned employee: {{ employeeName() }}</p>
+    <p class="subtitle">Employee ID: {{ selectedEmployeeId }}</p>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-flat-button color="warn" (click)="confirm()" [disabled]="!selectedEmployeeId || loading() || !!error()">
+    Unassign
+  </button>
+</mat-dialog-actions>
