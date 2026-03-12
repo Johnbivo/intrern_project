@@ -1,0 +1,10 @@
+
+spring:
+  application:
+    name: backend_capstone_project
+
+  data:
+    mongodb:
+      auto-index-creation: true
+  mongodb:
+    uri: mongodb://localhost:27017/capstone_db
