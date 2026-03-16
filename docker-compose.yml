@@ -1,0 +1,54 @@
+
+services:
+
+  mongo:
+    image: mongo:8.2
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+
+    command: ["mongod", "--bind_ip_all"]
+    environment:
+      MONGO_INITDB_DATABASE: capstone_db
+    
+    
+    
+    networks:
+      - intern_project
+
+  
+  backend:
+    build: ./backend_capstone_project
+    container_name: backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/capstone_db
+    depends_on:
+      - mongo
+
+    networks:
+      - intern_project
+
+
+  frontend:
+    build: ./finalFrontendApplication
+    container_name: frontend
+    restart: always
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+    networks:
+      - intern_project
+
+
+networks:
+  intern_project:
+    driver: bridge
+
+
+  

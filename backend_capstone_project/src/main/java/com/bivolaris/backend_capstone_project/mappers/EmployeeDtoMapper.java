@@ -5,6 +5,7 @@ import com.bivolaris.backend_capstone_project.dtos.CreateEmployeeRequest;
 import com.bivolaris.backend_capstone_project.dtos.EmployeeDto;
 import com.bivolaris.backend_capstone_project.entities.Employee;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface EmployeeDtoMapper {
@@ -13,5 +14,6 @@ public interface EmployeeDtoMapper {
     Employee toEntity(EmployeeDto employeeDto);
 
 
+    @Mapping(target = "id", ignore = true)
     Employee toEntity(CreateEmployeeRequest createEmployeeRequest);
 }

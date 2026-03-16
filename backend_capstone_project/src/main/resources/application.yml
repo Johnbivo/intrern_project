@@ -7,4 +7,5 @@ spring:
     mongodb:
       auto-index-creation: true
   mongodb:
-    uri: mongodb://localhost:27017/capstone_db
+    uri: ${MONGODB_URI}
+#    uri: mongodb://localhost:27017/capstone_db
