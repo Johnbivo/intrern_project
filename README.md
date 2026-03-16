@@ -33,7 +33,7 @@ This will:
 
 > This may take a few minutes.
 
-### 🔗 Application URLs
+### Application URLs
 | Service | URL |
 |--------|-----|
 | **Swagger UI** | http://localhost:8080/swagger-ui/index.html |
@@ -76,7 +76,7 @@ ng serve
 
 Then open your browser at:
 
-➡️ http://localhost:4200
+http://localhost:4200
 
 ---
 
@@ -94,10 +94,10 @@ root/
 
 ---
 
-# 📄 API Documentation (Swagger)
+# API Documentation (Swagger)
 
 After starting the backend, you can access Swagger UI at:
 
-👉 **http://localhost:8080/swagger-ui/index.html**
+**http://localhost:8080/swagger-ui/index.html**
 
 
