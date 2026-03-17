@@ -1,6 +1,7 @@
 import { inject, Injectable,signal } from "@angular/core";
 import { Company } from "../entities/Company";
 import { CompanyController } from "../controllers/company-controller";
+import { tap } from "rxjs/internal/operators/tap";
 
 
 @Injectable({ providedIn: "root" })
@@ -62,17 +63,22 @@ export class CompanyService {
     }
 
 
+    
     createCompany(company: Omit<Company, 'id'>) {
-        this.error.set(null);
-        this.companyController.createCompany(company as Company).subscribe({
-            next: (newCompany) => {
-                this.companies.update(list => [...list, newCompany]);
-            },
-            error: () => {
-                this.error.set('Failed to create company');
-            }
-        });
+  this.error.set(null);
+
+  this.companyController.createCompany(company as Company).subscribe({
+    next: (newCompany) => {
+      this.companies.update(list => [...list, newCompany]);
+    },
+    error: () => {
+      this.error.set('Failed to create company');
     }
+  });
+}
+
+
+
 
 
     deleteCompany(id: string) {

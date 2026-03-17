@@ -53,18 +53,17 @@ export class CompanyTable implements OnInit{
 
   // optization for table (not working) to stop blinking
   trackByCompanyId(index: number, company: Company): string {
-    return company.id;
+    return company.id ?? index;
   }
 
   createCompany() {
     const dialogRef = this.dialog.open(CreateCompanyDialog);
+
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.companyService.createCompany(result);
-      }
+      if (!result) return;
+      this.companyService.createCompany(result);
     });
   }
-
 
   
   updateCompany(company: Company) {

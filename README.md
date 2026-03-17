@@ -55,6 +55,15 @@ git clone <repository-url>
 ```
 
 
+### **Prerequisites for Frontend**
+
+- Install **Node.js** from the official website: https://nodejs.org/
+- Install **Angular CLI** globally using the following command:
+	```bash
+	npm install -g @angular/cli
+	```
+
+
 ### **2. Build the backend**
 Navigate to the backend project folder:
 
