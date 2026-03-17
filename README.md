@@ -17,8 +17,13 @@ Database creation happens automatically on first run.
 ---
 
 # Running with Docker (Recommended)
+**Docker must be installed on the running machine. If not, you will need to install docker from the official website https://www.docker.com/**
 
 > **IMPORTANT**  
+> Navigate to the project folder using:
+> ```bash
+> cd {project-folder}
+>```
 > Run the project using:  
 >
 > ```bash
@@ -49,6 +54,7 @@ This will:
 git clone <repository-url>
 ```
 
+
 ### **2. Build the backend**
 Navigate to the backend project folder:
 
@@ -62,7 +68,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-### **4. Ensure MongoDB is installed**
+### **4. Ensure MongoDB is installed. If not install the mongodb version of your choice https://www.mongodb.com/ This project uses the community edition version 8.2 found here https://www.mongodb.com/try/download/community**
 The database should be created automatically.  
 If it does **not**, verify that **MongoDB** is installed and running on your machine.
 
