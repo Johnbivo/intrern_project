@@ -20,11 +20,14 @@ Database creation happens automatically on first run.
 **Docker must be installed on the running machine. If not, you will need to install docker from the official website https://www.docker.com/**
 
 > **IMPORTANT**  
-> Clone the project and then navigate to the project folder using:
+> Clone the project: 
 > ```bash
 > git clone https://github.com/Johnbivo/intrern_project.git
-> cd {intern_project}
 >```
+> Navigate to the project folder using:
+> ```bash
+> cd {intern_project}
+> ```
 > Run the project using:  
 >
 > ```bash
