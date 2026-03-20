@@ -76,14 +76,14 @@ cd backend_capstone_project
 mvn clean install
 ```
 
-### **3. Run the backend**
+### **3. Ensure MongoDB is installed. If not install the mongodb version of your choice https://www.mongodb.com/ This project uses the community edition version 8.2 found here https://www.mongodb.com/try/download/community**
+The database should be created automatically.  
+If it does **not**, verify that **MongoDB** is installed and running on your machine.
+
+### **4. Run the backend**
 ```bash
 mvn spring-boot:run
 ```
-
-### **4. Ensure MongoDB is installed. If not install the mongodb version of your choice https://www.mongodb.com/ This project uses the community edition version 8.2 found here https://www.mongodb.com/try/download/community**
-The database should be created automatically.  
-If it does **not**, verify that **MongoDB** is installed and running on your machine.
 
 ### **5. Run the frontend**
 Navigate to the frontend directory:
