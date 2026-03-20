@@ -26,7 +26,7 @@ Database creation happens automatically on first run.
 >```
 > Navigate to the project folder using:
 > ```bash
-> cd {intern_project}
+> cd intern_project
 > ```
 > Run the project using:  
 >
