@@ -67,6 +67,8 @@ git clone https://github.com/Johnbivo/intrern_project.git
 	npm install -g @angular/cli
 	```
 
+### Navigate to pox.xml and commend this line uri: mongodb://mongo:27017/capstone_db by adding a # in front and uncommend this line by removing the #,uri: mongodb://localhost:27017/capstone_db to run mongo locally
+
 
 ### **2. Build the backend**
 Navigate to the backend project folder:
