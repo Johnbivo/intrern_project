@@ -60,7 +60,7 @@ public class CompanyController {
     @ApiResponse(responseCode = "400", description = "Invalid input or update failed")
     private ResponseEntity<CompanyDto> updateCompany(@PathVariable String id,@RequestBody CompanyDto companyDto) {
         CompanyDto updatedCompany = companyService.updateCompany(id, companyDto);
-        if(updatedCompany == null) {
+        if (updatedCompany == null) {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok(updatedCompany);
@@ -71,7 +71,7 @@ public class CompanyController {
     @ApiResponse(responseCode = "200", description = "Successfully deleted company")
     @ApiResponse(responseCode = "404", description = "Company not found")
     private ResponseEntity<Void> deleteCompany(@PathVariable String id) {
-        if(!(companyService.deleteCompany(id)))
+        if (!(companyService.deleteCompany(id)))
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok().build();
 

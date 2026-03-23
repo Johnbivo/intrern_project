@@ -100,7 +100,7 @@ public class DeviceController {
     @ApiResponse(responseCode = "200", description = "Successfully assigned device")
     @ApiResponse(responseCode = "400", description = "Assignment failed")
     public ResponseEntity<Void> assignDeviceToCompany(@PathVariable String serialNumber, @PathVariable String companyId){
-        if(!deviceService.assignDeviceToCompany(serialNumber, companyId)){
+        if (!deviceService.assignDeviceToCompany(serialNumber, companyId)){
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
@@ -114,7 +114,7 @@ public class DeviceController {
     @ApiResponse(responseCode = "200", description = "Successfully unassigned device")
     @ApiResponse(responseCode = "400", description = "Unassignment failed")
     public ResponseEntity<Void> unassignDeviceFromEmployee(@PathVariable String serialNumber, @PathVariable String employeeId){
-        if(!deviceService.unassignDeviceFromEmployee(serialNumber, employeeId)){
+        if (!deviceService.unassignDeviceFromEmployee(serialNumber, employeeId)){
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
@@ -125,7 +125,7 @@ public class DeviceController {
     @ApiResponse(responseCode = "200", description = "Successfully unassigned device")
     @ApiResponse(responseCode = "400", description = "Unassignment failed")
     public ResponseEntity<Void> unassignDeviceFromCompany(@PathVariable String serialNumber, @PathVariable String companyId){
-        if(!deviceService.unassignDeviceFromCompany(serialNumber, companyId)){
+        if (!deviceService.unassignDeviceFromCompany(serialNumber, companyId)){
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
@@ -137,7 +137,7 @@ public class DeviceController {
     @ApiResponse(responseCode = "200", description = "Successfully retrieved list")
     @ApiResponse(responseCode = "404", description = "No devices found for this employee")
     public ResponseEntity<List<DeviceDto>> getAllDevicesAssignedToEmployee(@PathVariable String employeeId){
-        if(deviceService.getAllDevicesAssignedToEmployee(employeeId) == null){
+        if (deviceService.getAllDevicesAssignedToEmployee(employeeId) == null){
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(deviceService.getAllDevicesAssignedToEmployee(employeeId));
@@ -148,7 +148,7 @@ public class DeviceController {
     @ApiResponse(responseCode = "200", description = "Successfully retrieved list")
     @ApiResponse(responseCode = "404", description = "No devices found for this company")
     public ResponseEntity<List<DeviceDto>> getAllDevicesAssignedToCompany(@PathVariable String companyId){
-        if(deviceService.getAllDevicesAssignedToCompany(companyId) == null){
+        if (deviceService.getAllDevicesAssignedToCompany(companyId) == null){
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(deviceService.getAllDevicesAssignedToCompany(companyId));

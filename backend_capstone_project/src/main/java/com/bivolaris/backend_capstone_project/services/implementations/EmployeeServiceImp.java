@@ -31,7 +31,7 @@ public class EmployeeServiceImp implements EmployeeService {
         List<EmployeeDto> employees =  employeeRepository.findAll().stream()
                 .map(employeeDtoMapper::toDto)
                 .toList();
-        if(employees.isEmpty()){
+        if (employees.isEmpty()){
             throw new EmployeesNotFoundException("No employees found.");
         }
         return employees;
@@ -40,7 +40,7 @@ public class EmployeeServiceImp implements EmployeeService {
     @Override
     public EmployeeDto getEmployeeById(String id) {
         EmployeeDto employee = employeeRepository.findById(id).map(employeeDtoMapper::toDto).orElse(null);
-        if(employee == null){
+        if (employee == null){
             throw new EmployeeNotFoundException("Employee not found.");
         }
         return employee;
@@ -50,11 +50,11 @@ public class EmployeeServiceImp implements EmployeeService {
     @Override
     public boolean createEmployee(CreateEmployeeRequest createEmployeeRequest){
 
-        try{
+        try {
             Employee employee =  employeeDtoMapper.toEntity(createEmployeeRequest);
             employeeRepository.save(employee);
             return true;
-        }catch (Exception e){
+        } catch (Exception e){
             throw new EmployeeCreationException("Employee creation failed.");
         }
     }
@@ -63,7 +63,7 @@ public class EmployeeServiceImp implements EmployeeService {
     @Override
     public EmployeeDto updateEmployee(String id, EmployeeDto employeeDto){
         Employee employee = employeeRepository.findById(id).orElse(null);
-        if(employee == null){
+        if (employee == null){
             throw new EmployeeNotFoundException("This employee does not exist.");
         }
 
@@ -79,7 +79,7 @@ public class EmployeeServiceImp implements EmployeeService {
     @Override
     public boolean deleteEmployee(String id){
         Employee employee = employeeRepository.findById(id).orElse(null);
-        if(employee == null){
+        if (employee == null){
             throw new EmployeeNotFoundException("This employee does not exist.");
         }
         try {
@@ -105,7 +105,7 @@ public class EmployeeServiceImp implements EmployeeService {
                 .stream()
                 .map(employeeDtoMapper::toDto)
                 .toList();
-        if(employees.isEmpty()){
+        if (employees.isEmpty()){
             throw new EmployeesNotFoundException("No employees found for this company.");
         }
         return employees;
@@ -115,7 +115,7 @@ public class EmployeeServiceImp implements EmployeeService {
     @Override
     public boolean unassignEmployeeFromCompany(String employeeId, String companyId){
         Employee employee = employeeRepository.findById(employeeId).orElse(null);
-        if(employee == null){
+        if (employee == null){
             return false;
         }
         employee.setCompanyId(null);
@@ -126,7 +126,7 @@ public class EmployeeServiceImp implements EmployeeService {
     @Override
     public void unassignAllEmployeesFromCompany(String companyId){
         List<Employee> employees = employeeRepository.findAllByCompanyId(companyId);
-        for(Employee employee : employees){
+        for (Employee employee : employees){
             employee.setCompanyId(null);
             employeeRepository.save(employee);
         }

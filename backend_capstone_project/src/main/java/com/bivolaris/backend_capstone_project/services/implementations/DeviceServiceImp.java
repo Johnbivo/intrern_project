@@ -38,7 +38,7 @@ public class DeviceServiceImp implements DeviceService {
     @Override
     public boolean createDevice(CreateDeviceRequest createDeviceRequest){
         Device device = deviceDtoMapper.toEntity(createDeviceRequest);
-        if(createDeviceRequest.getSerialNumber() == null || createDeviceRequest.getSerialNumber().isEmpty()){
+        if (createDeviceRequest.getSerialNumber() == null || createDeviceRequest.getSerialNumber().isEmpty()){
             String serialNumber = generateSerialNumber();
             device.setSerialNumber(serialNumber);
         }else{
