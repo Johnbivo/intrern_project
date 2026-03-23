@@ -122,3 +122,7 @@ After starting the backend, you can access Swagger UI at:
 **http://localhost:8080/swagger-ui/index.html**
 
 
+#### Note:
+The docker mongo intentionally does not store the data volume locally on the machine. All data is deleted upon deleting the container.
+
+
