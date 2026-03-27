@@ -67,6 +67,8 @@ git clone https://github.com/Johnbivo/intrern_project.git
 	npm install -g @angular/cli
 	```
 
+### Navigate to pox.xml and commend this line uri: mongodb://mongo:27017/capstone_db by adding a # in front and uncommend this line by removing the #,uri: mongodb://localhost:27017/capstone_db to run mongo locally
+
 
 ### **2. Build the backend**
 Navigate to the backend project folder:
@@ -118,5 +120,9 @@ root/
 After starting the backend, you can access Swagger UI at:
 
 **http://localhost:8080/swagger-ui/index.html**
+
+
+#### Note:
+The docker mongo intentionally does not store the data volume locally on the machine. All data is deleted upon deleting the container.
 
 
