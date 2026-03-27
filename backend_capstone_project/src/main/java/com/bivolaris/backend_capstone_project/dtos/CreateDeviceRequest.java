@@ -8,14 +8,14 @@ import lombok.Data;
 public class CreateDeviceRequest {
 
 
-    public String serialNumber;
+    private String serialNumber;
 
     @NotEmpty( message = "Device name is required")
-    public String name;
+    private String name;
 
     @NotEmpty( message = "Device type is required")
-    public String type;
+    private String type;
 
     @NotEmpty( message = "Device company id is required")
-    public String companyId;
+    private String companyId;
 }

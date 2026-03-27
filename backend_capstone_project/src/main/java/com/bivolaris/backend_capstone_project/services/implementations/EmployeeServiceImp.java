@@ -68,7 +68,7 @@ public class EmployeeServiceImp implements EmployeeService {
         }
 
         try{
-            employee = employeeDtoMapper.toEntity(employeeDto);
+            employeeDtoMapper.updateEmployeeFromDto(employeeDto, employee);
             employeeRepository.save(employee);
         }catch (Exception e){
             throw new EmployeeUpdateException("Employee update failed.");

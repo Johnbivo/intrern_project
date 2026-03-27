@@ -108,7 +108,6 @@ public class EmployeesServiceImpTest {
         String employeeId = "123";
 
         when(employeeRepository.findById(employeeId)).thenReturn(Optional.of(testEmployee));
-        when(employeeDtoMapper.toEntity(testEmployeeDto)).thenReturn(testEmployee);
         when(employeeDtoMapper.toDto(testEmployee)).thenReturn(testEmployeeDto);
 
         EmployeeDto result = employeeService.updateEmployee(employeeId, testEmployeeDto);
@@ -117,6 +116,7 @@ public class EmployeesServiceImpTest {
         assertEquals(employeeId, result.getId());
         assertEquals(testEmployeeDto, result);
 
+        verify(employeeDtoMapper).updateEmployeeFromDto(testEmployeeDto, testEmployee);
         verify(employeeRepository).save(testEmployee);
 
     }

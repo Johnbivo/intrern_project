@@ -13,6 +13,8 @@ public interface EmployeeDtoMapper {
     EmployeeDto toDto(Employee employee);
     Employee toEntity(EmployeeDto employeeDto);
 
+    void updateEmployeeFromDto(EmployeeDto employeeDto, @org.mapstruct.MappingTarget Employee employee);
+
 
     @Mapping(target = "id", ignore = true)
     Employee toEntity(CreateEmployeeRequest createEmployeeRequest);

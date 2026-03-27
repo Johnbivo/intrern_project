@@ -7,5 +7,9 @@ spring:
     mongodb:
       auto-index-creation: true
   mongodb:
-    uri: mongodb://mongo:27017/capstone_db
-#    uri: mongodb://localhost:27017/capstone_db
+    # uri: mongodb://mongo:27017/capstone_db
+    uri: mongodb://localhost:27017/capstone_db
+
+server:
+  address: 0.0.0.0
+  port: 8080

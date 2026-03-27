@@ -15,6 +15,6 @@ public class CreateEmployeeRequest {
     @Email( message = "Employee email is not valid")
     private String email;
 
-    @NotEmpty( message = "Employee company id is required")
+
     private String companyId;
 }
