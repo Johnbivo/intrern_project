@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/companiesFragment">
+
+
+    <fragment
+        android:id="@+id/companiesFragment"
+        android:name="com.bivolaris.myapplication.ui.companies.CompaniesFragment"
+        android:label="fragment_companies"
+        tools:layout="@layout/fragment_companies" />
+
+    <fragment
+        android:id="@+id/employeesFragment"
+        android:name="com.bivolaris.myapplication.ui.employees.EmployeeFragment"
+        android:label="fragment_employee"
+        tools:layout="@layout/fragment_employee" />
+
+    <fragment
+        android:id="@+id/devicesFragment"
+        android:name="com.bivolaris.myapplication.ui.devices.DeviceFragment"
+        android:label="fragment_device"
+        tools:layout="@layout/fragment_device" />
+
+</navigation>
