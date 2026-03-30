@@ -108,7 +108,7 @@ root/
 │
 ├── backend_capstone_project/        # Spring Boot backend
 ├── finalFrontEndApplication/        # Angular frontend
-├── android_app/                     # Android project (new)
+├── Android/                     	 # Android project (new)
 └── docker-compose.yml               # Docker config for backend + frontend
 ```
 
