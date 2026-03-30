@@ -106,11 +106,10 @@ http://localhost:4200
 ```
 root/
 │
-├── backend_capstone_project/      # Spring Boot backend (API + DB)
-│
-├── finalFrontEndApplication/      # Angular frontend
-│
-└── docker-compose.yml             # Docker config for full system
+├── backend_capstone_project/        # Spring Boot backend
+├── finalFrontEndApplication/        # Angular frontend
+├── android_app/                     # Android project (new)
+└── docker-compose.yml               # Docker config for backend + frontend
 ```
 
 ---
