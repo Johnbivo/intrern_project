@@ -33,6 +33,8 @@ public class CompaniesViewModel extends ViewModel {
         return companies;
     }
 
+    public CompaniesViewModel() { this(null); }
+
 
     // added for mockito testing
     private final CompanyController controller;

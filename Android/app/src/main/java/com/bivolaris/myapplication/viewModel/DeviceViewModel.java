@@ -36,6 +36,9 @@ public class DeviceViewModel extends ViewModel {
         return devices;
     }
 
+
+    public DeviceViewModel() { this(null); }
+
     private final DeviceController controller;
     public DeviceViewModel(DeviceController controller) {
         this.controller = (controller != null) ? controller : RetrofitClient.getInstance().getDeviceController();

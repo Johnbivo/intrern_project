@@ -30,6 +30,8 @@ public class GlobalExceptionHandler {
         errorBody.put("requestType", "GET");
         errorBody.put("path", "/employees/{employeeId}");
 
+
+
         return new ResponseEntity<>(errorBody, HttpStatus.NOT_FOUND);
     }
 

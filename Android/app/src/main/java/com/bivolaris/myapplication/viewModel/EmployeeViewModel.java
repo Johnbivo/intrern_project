@@ -35,6 +35,9 @@ public class EmployeeViewModel extends ViewModel {
         return employees;
     }
 
+
+    public EmployeeViewModel() { this(null); }
+
     private final EmployeeController controller;
     public EmployeeViewModel(EmployeeController controller){
         this.controller = (controller != null) ? controller : RetrofitClient.getInstance().getEmployeeController();
