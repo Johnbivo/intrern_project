@@ -71,6 +71,7 @@ public class CompaniesViewModelTests {
 
         //assert
 
+        viewModel.loadCompanies();
         List<Company> result = viewModel.getCompanies().getValue();
         assertNotNull(result);
         assertEquals(3, result.size());
