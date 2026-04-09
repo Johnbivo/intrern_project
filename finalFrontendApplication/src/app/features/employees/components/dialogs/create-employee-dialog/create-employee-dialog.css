@@ -1,0 +1,9 @@
+:host ::ng-deep .invalid-email .mdc-notched-outline__leading,
+:host ::ng-deep .invalid-email .mdc-notched-outline__notch,
+:host ::ng-deep .invalid-email .mdc-notched-outline__trailing {
+	border-color: #d32f2f !important;
+}
+
+:host ::ng-deep .invalid-email .mdc-floating-label {
+	color: #d32f2f !important;
+}

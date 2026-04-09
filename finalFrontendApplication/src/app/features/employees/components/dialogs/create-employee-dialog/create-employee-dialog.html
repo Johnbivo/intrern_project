@@ -9,16 +9,19 @@
   </mat-form-field>
 
 
-<mat-form-field appearance="outline" class="full-width">
+<mat-form-field appearance="outline" class="full-width" [class.invalid-email]="showEmailError()">
     <mat-label>Email</mat-label>
-    <input matInput [(ngModel)]="formData.email" name="email" required />
+    <input matInput [(ngModel)]="formData.email" name="email" type="email" required (input)="markEmailTouched()" (blur)="markEmailTouched()" />
+    <mat-error *ngIf="showEmailError()">
+      Please enter a valid email address.
+    </mat-error>
   </mat-form-field>
 </mat-dialog-content>
 
 
 <mat-dialog-actions align="end">
   <button mat-button (click)="cancel()">Cancel</button>
-  <button mat-flat-button color="primary" (click)="submit()">Create</button>
+  <button mat-flat-button color="primary" (click)="submit()" [disabled]="!canSubmit()">Create</button>
 </mat-dialog-actions>
 
 
