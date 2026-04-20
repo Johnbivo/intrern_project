@@ -12,7 +12,6 @@ Work_project_AI/
 ├── archive/PetImages/     # Full dataset (Cat / Dog)
 ├── training/              # Sampled training images (cat / dog)
 ├── classification_model.ipynb   # Original notebook
-├── classifier_clean.ipynb       # Clean notebook
 ├── model.pth              # Saved custom model
 ├── model1.pth             # Saved ResNet18 model
 ├── requirements.txt
