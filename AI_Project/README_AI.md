@@ -64,7 +64,7 @@ copy_random("archive/PetImages/Dog", "training/dog", 400)
 
 ## Running the Notebook
 
-Open `classifier_clean.ipynb` in VS Code or Jupyter and run cells top to bottom.
+Open the ipynb file and ran only the `ìmports cell`, `model definition cell` and the `gradio cells` in VS Code or Jupyter and run cells top to bottom.
 
 The notebook is split into two independent sections:
 
