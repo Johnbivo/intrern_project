@@ -1,6 +1,6 @@
 # Cat vs Dog Image Classifier
 
-A PyTorch image classifier trained on the [Microsoft Cats vs Dogs dataset](https://www.microsoft.com/en-us/download/details.aspx?id=54765).
+A PyTorch image classifier trained on this dataset https://www.kaggle.com/datasets/bhavikjikadara/dog-and-cat-classification-dataset
 Two models are included: a custom CNN built from scratch, and a ResNet18 transfer learning model.
 
 ---
