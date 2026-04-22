@@ -77,6 +77,7 @@ The notebook is split into two independent sections:
 
 - Uses pretrained ImageNet weights, fine-tuned for cat vs dog
 - ~96.25%+ accuracy on the same 800 images
+- - The resnet model has been renamed in the process of retraining the custom CNN model, to `resnet_model.pth`. If you get an error that a model does not exist, either change the model names temporarily (form model to model1 and the resnet_model to model) or change the code name model to resnet_model
 
 ---
 
