@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat or Dog Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 60px auto;
+            text-align: center;
+        }
+        h1 { margin-bottom: 24px; }
+
+        input[type="file"] {
+            margin-bottom: 16px;
+        }
+        button {
+            padding: 10px 24px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top :24px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c7a2c; }
+
+        img {
+            max-width: 100%;
+            margin-top: 16px;
+            border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Cat or Dog?</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" accept="image/*" required><br>
+        <button type="submit">Classify</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">Prediction: {{ prediction }}</div>
+        <div class="result">Confidence: {{ percentage }}%</div>
+    {% endif %}
+</body>
+</html>
